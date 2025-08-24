@@ -30,18 +30,15 @@ auth_jwt/
 │ │ ├── App.jsx
 │ │ ├── main.jsx
 │
-├── .env # Environment variables (JWT_SECRET, DB_URI, PORT)
+├── .env # Environment variables (JWT_SECRET, MONGODB_URI)
 ├── package.json
 
-markdown
-Copy
-Edit
 
 ## API Endpoints
 ### Auth Routes
-- **POST** `/api/signup` → Register new user  
+- **POST** `/api/register` → Register new user  
 - **POST** `/api/login` → Login user and return token  
-- **GET** `/api/protected` → Example of a protected route  
+- **GET** `/api/profile` → Example of a protected route  
 
 ## How It Works
 1. User signs up → password gets hashed and stored in MongoDB.  
@@ -57,30 +54,17 @@ Edit
    cd auth_jwt
 Install dependencies
 
-bash
-Copy
-Edit
 cd backend && npm install
 cd ../frontend && npm install
 Create .env file in backend with:
 
-ini
-Copy
-Edit
-PORT=5000
 MONGO_URI=your_mongo_connection
 JWT_SECRET=your_secret_key
 Start backend
 
-bash
-Copy
-Edit
 cd backend
 npm run dev
 Start frontend
 
-bash
-Copy
-Edit
 cd frontend
 npm run dev
